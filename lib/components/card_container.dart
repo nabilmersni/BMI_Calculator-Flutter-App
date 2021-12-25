@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CardContainer extends StatelessWidget {
-  final Color bgColor;
+  CardContainer({required this.bgColor, this.cardChild});
 
-  CardContainer({required this.bgColor});
+  final Color bgColor;
+  final cardChild;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
