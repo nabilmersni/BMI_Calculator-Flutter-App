@@ -17,10 +17,10 @@ class GenderBTNContent extends StatelessWidget {
         SvgPicture.asset(
           svgPath,
           color: iconColor,
-          width: 75,
+          width: 65,
         ),
         const SizedBox(
-          height: 25,
+          height: 20,
         ),
         Text(
           text,
