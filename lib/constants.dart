@@ -7,13 +7,13 @@ const Color kActiveIconColor = Colors.white;
 const Color kInactiveIconColor = Color(0xff8D8E98);
 
 const TextStyle kLabelTextStyle = TextStyle(
-  fontSize: 18,
+  fontSize: 16,
   fontWeight: FontWeight.w500,
   color: Color(0xff8D8E98),
 );
 
 const TextStyle kBoldTextStyle = TextStyle(
   color: Colors.white,
-  fontSize: 50,
+  fontSize: 35,
   fontWeight: FontWeight.w900,
 );

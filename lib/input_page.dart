@@ -4,6 +4,7 @@ import './components/gender_btn_content.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'constants.dart';
 import 'dart:math';
+import 'results_page.dart';
 
 enum Gender {
   male,
@@ -23,6 +24,7 @@ class _InputPageState extends State<InputPage> {
   double currentHeight = 180;
   int currentWeight = 70;
   int currentAge = 20;
+  var BMI;
 
   @override
   Widget build(BuildContext context) {
@@ -226,21 +228,32 @@ class _InputPageState extends State<InputPage> {
             ),
             GestureDetector(
               onTap: () {
-                //currentWeight / pow(currentHeight * 0.01, 2)
+                setState(() {
+                  BMI = currentWeight / pow(currentHeight * 0.01, 2);
+                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultsPage(
+                      bmiResult: BMI,
+                    ),
+                  ),
+                );
+                // Navigator.pushNamed(context, 'resultPage');
               },
               child: Container(
                 margin: EdgeInsets.only(top: 5),
-                height: 65,
+                height: 48,
                 width: double.infinity,
                 color: Color(0xffEB1555),
                 child: const Center(
                   child: Text(
                     'CALCULATE BMI',
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: 21),
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ));
   }
@@ -258,13 +271,13 @@ class RoundIconButton extends StatelessWidget {
       child: SvgPicture.asset(
         svgPath,
         color: Colors.white,
-        width: 20,
+        width: 15,
       ),
       onPressed: onPressed,
       elevation: 2,
       constraints: const BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+        width: 45,
+        height: 45,
       ),
       fillColor: Color(0xff373645),
       shape: CircleBorder(),

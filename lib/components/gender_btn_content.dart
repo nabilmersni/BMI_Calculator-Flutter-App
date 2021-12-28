@@ -17,7 +17,7 @@ class GenderBTNContent extends StatelessWidget {
         SvgPicture.asset(
           svgPath,
           color: iconColor,
-          width: 65,
+          width: 42,
         ),
         const SizedBox(
           height: 20,
@@ -25,7 +25,7 @@ class GenderBTNContent extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: FontWeight.w500,
             color: iconColor,
           ),
